@@ -8,15 +8,13 @@ public class ShopRepository {
      *
      * @param current — массив, в который мы хотим добавить элемент
      * @param product — элемент, который мы хотим добавить
-     * @return — возвращает новый массив, который выглядит, как тот, что мы передали,
-     * но с добавлением нового элемента в конец
+     * @return — возвращает новый массив, который выглядит, как тот, что мы передали, но с добавлением нового элемента в
+     * конец
      */
 
     private Product[] addToArray(Product[] current, Product product) {
         Product[] tmp = new Product[current.length + 1];
-        for (int i = 0; i < current.length; i++) {
-            tmp[i] = current[i];
-        }
+        System.arraycopy(current, 0, tmp, 0, current.length);
         tmp[tmp.length - 1] = product;
         return tmp;
     }
